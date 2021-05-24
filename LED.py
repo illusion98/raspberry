@@ -2,8 +2,16 @@ import RPi.GPIO as GPIO
 import time
 
 GPIO.setmode(GPIO.BOARD)
-LED = 11
+LED = 12
 
 GPIO.setup(LED,GPIO.OUT, initial=GPIO.LOW)
-GPIO.output(LED,GPIO.HIGH)
-time.sleep(10)
+while 1:
+
+	GPIO.output(LED,GPIO.HIGH)
+	time.sleep(1)
+
+	GPIO.output(LED,GPIO.LOW)
+	time.sleep(1)
+
+if __name__=='__main__':
+	main()
