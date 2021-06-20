@@ -8,13 +8,13 @@ LED=12
 def main():
     GPIO.setup(LED, GPIO.OUT)
     
-    PWM_LED=GPIO.PWM(LED, 50)
-    PWM_LED.start(0)
+    PWM_LED=GPIO.PWM(LED, 50) #(channel,frequency)
+    PWM_LED.start(0) #(dutycycle)
     
     while 1:
-        for duty in range(100):
+        Duty=input()
+        duty=int(Duty)
         PWM_LED.ChangeDutyCycle(duty)
-        time.sleep(0,5)
         
 if __name__=='__main__':
     main()
