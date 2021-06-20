@@ -3,8 +3,8 @@ import I2C_driver as LCD
 from time import sleep
 
 GPIO.setmode(GPIO.BOARD)
-LED = 12
-Switch= 10
+LED = 32         # 12
+Switch= 8        # 10
 mylcd = LCD.lcd()
 
 GPIO.setwarnings(False) 
@@ -20,7 +20,7 @@ while True:
         GPIO.output(LED, GPIO.HIGH)
         
         mylcd.lcd_display_string("LED ON",1)
-        sleep(3)
+        sleep(1)
         
         mylcd.lcd_clear()
         sleep(0.2)
@@ -30,7 +30,7 @@ while True:
         GPIO.output(LED, GPIO.LOW)
         
         mylcd.lcd_display_string("LED OFF",1)
-        time.sleep(1)
+        sleep(1)
         
         mylcd.lcd_clear()
         sleep(0.2)
